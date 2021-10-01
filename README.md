@@ -1,10 +1,10 @@
 ## ReacJS Kronton
 
 ## O que vamos aprender?
+### Conectando com API rest (GET, POST, DELETE e PUT);
 ### React Hooks e funcionalidades;
 ### Estado x props;
 ### Styled components;
-### Conectando com API rest (GET, POST, DELETE e PUT);
 ### Conectando com GraphQL (Apollo Client) *** query;
 ### Material UI;
 ### React e typescript;
