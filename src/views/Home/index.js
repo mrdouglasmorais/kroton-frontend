@@ -1,13 +1,28 @@
 import { useState } from 'react';
+import Lottie from 'react-lottie';
+import { toast } from 'react-toastify';
+
 import api from '../../services/api';
 
 import HeaderComponent from '../../components/HeaderComponent';
 import FooterComponent from '../../components/FooterComponent';
 
+import { Container, LoadStyle } from './style';
+import animationData from '../../assets/animation/78494-loader.json'
+
 function Home(){
   const [ isLoad, setIsLoad ] = useState(false);
   const [ data, setData ] = useState({}); 
-  const [ zipcode, setZipCode ] = useState({}); 
+  const [ zipcode, setZipCode ] = useState({});
+  
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
   const handleZipValue = (e) => {
     e.preventDefault();
@@ -16,18 +31,29 @@ function Home(){
       res => {
         setData(res.data)
       }
-    ).catch( err => alert('Algo deu errado') ).finally(
-      () => setIsLoad(false)
+    ).catch( err => toast.error('Algo deu errado') ).finally(
+      () => setTimeout( () => {
+        setIsLoad(false)
+      }, 600)
     )
   }
 
   if(isLoad){
-    return (<h1>Carregando</h1>)
+    return (
+      <LoadStyle>
+        <Lottie
+          options={defaultOptions}
+          width={300}
+          height={300}
+        />
+      </LoadStyle>
+    )
   }
   return(
     <>
       <HeaderComponent />
-      <div>
+      <Container>
+        <div className="first-section">
         <h1>Home</h1>
         <form onSubmit={handleZipValue}>
           <input 
@@ -43,8 +69,9 @@ function Home(){
           <p>Bairro: { data?.bairro }</p>
           <p>Cidade: { data?.localidade }</p>
           <p>Estado: { data?.uf }</p>
+        </div>
         </div> 
-      </div>
+      </Container>
       <FooterComponent />
     </>
   )
