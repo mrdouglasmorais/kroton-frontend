@@ -1,0 +1,37 @@
+{
+  "leads": [
+    {
+      "name": "Douglas Morais",
+      "email": "mr.douglasmorais23@gmail.com.br",
+      "course": "Desenvimento de Games",
+      "details": "Teste",
+      "id": 1
+    }
+  ],
+  "courses": [
+    {
+      "id": 0,
+      "name": "Desenvimento",
+      "description": "Descrição do curso",
+      "img": "https://www.gamedevdrops.com/wp-content/uploads/2019/11/curso-games.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Desenvimento de Games",
+      "description": "Descrição do curso",
+      "img": "https://www.gamedevdrops.com/wp-content/uploads/2019/11/curso-games.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Desenvimento Backend",
+      "description": "Descrição do curso",
+      "img": "https://www.gamedevdrops.com/wp-content/uploads/2019/11/curso-games.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Desenvimento Backend",
+      "description": "Descrição do curso",
+      "img": "https://www.gamedevdrops.com/wp-content/uploads/2019/11/curso-games.jpg"
+    }
+  ]
+}

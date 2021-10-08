@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Lottie from 'react-lottie';
 import { toast } from 'react-toastify';
 
-import api from '../../services/api';
+import { api } from '../../services/api';
 
 import HeaderComponent from '../../components/HeaderComponent';
 import FooterComponent from '../../components/FooterComponent';
